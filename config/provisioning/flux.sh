@@ -4,7 +4,7 @@ source /venv/main/bin/activate
 COMFYUI_DIR=${WORKSPACE}/ComfyUI
 sudo -v; curl https://rclone.org/install.sh | sudo bash;
 
-echo "[${BUCKET_DIR}]
+echo "[${BUCKET_NAME}]
 type = b2
 account = ${ACCOUNT}
 key = ${KEY}
