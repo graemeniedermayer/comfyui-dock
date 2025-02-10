@@ -2,6 +2,16 @@
 
 source /venv/main/bin/activate
 COMFYUI_DIR=${WORKSPACE}/ComfyUI
+sudo -v; curl https://rclone.org/install.sh | sudo bash;
+
+echo "[${BUCKET_DIR}]
+type = b2
+account = ${ACCOUNT}
+key = ${KEY}
+hard_delete = true" >> rclone.conf;
+
+rclone config --config=rclone.conf <&-;
+rclone copy --config=rclone.conf  ${BUCKET_NAME}:${BUCKET_DIR}/${CHECKPOINT} ${COMFYUI_DIR}/models/checkpoints/${CHECKPOINT};
 
 # Packages are installed after nodes so we can fix them...
 
