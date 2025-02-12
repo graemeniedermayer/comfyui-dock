@@ -11,7 +11,7 @@ key = ${KEY}
 hard_delete = true" >> rclone.conf;
 
 rclone config --config=rclone.conf <&-;
-rclone copy --config=rclone.conf  ${BUCKET_NAME}:${BUCKET_DIR}/${CHECKPOINT} ${COMFYUI_DIR}/models/checkpoints/${CHECKPOINT};
+rclone copy --config=rclone.conf  ${BUCKET_NAME}:${BUCKET_DIR}/${CHECKPOINT}/${FILE_NAME}/${FILE_NAME} ${COMFYUI_DIR}/models/unet/${CHECKPOINT};
 
 # Packages are installed after nodes so we can fix them...
 
