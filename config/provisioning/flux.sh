@@ -27,8 +27,8 @@ PIP_PACKAGES=(
 
 NODES=(
     "https://github.com/city96/ComfyUI-GGUF",
-    "https://github.com/Jcd1230/rembg-comfyui-node",
-    "https://github.com/jtydhr88/ComfyUI-LayerDivider",
+    "https://github.com/Jcd1230/rembg-comfyui-node"
+    # "https://github.com/jtydhr88/ComfyUI-LayerDivider"
     #"https://github.com/ltdrdata/ComfyUI-Manager"
     #"https://github.com/cubiq/ComfyUI_essentials"
 )
