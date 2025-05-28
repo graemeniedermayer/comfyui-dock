@@ -11,7 +11,12 @@ key = ${KEY}
 hard_delete = true" >> rclone.conf;
 
 rclone config --config=rclone.conf <&-;
+# main model
 rclone copy --config=rclone.conf  ${BUCKET_NAME}:${BUCKET_DIR}/${CHECKPOINT}/${FILE_NAME}/${FILE_NAME} ${COMFYUI_DIR}/models/unet/${CHECKPOINT};
+# download loras
+
+# download specific loras
+
 
 # Packages are installed after nodes so we can fix them...
 
@@ -21,14 +26,16 @@ APT_PACKAGES=(
 )
 
 PIP_PACKAGES=(
-    #"package-1"
-    #"package-2"
+    "onnxruntime", 
+    "psd_tools", 
+    "packbits", 
+    "pytoshop==1.1.0"
 )
 
 NODES=(
     "https://github.com/city96/ComfyUI-GGUF",
     # "https://github.com/Jcd1230/rembg-comfyui-node"
-    # "https://github.com/jtydhr88/ComfyUI-LayerDivider"
+    "https://github.com/jtydhr88/ComfyUI-LayerDivider",
     #"https://github.com/ltdrdata/ComfyUI-Manager"
     #"https://github.com/cubiq/ComfyUI_essentials"
 )
